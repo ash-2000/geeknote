@@ -274,6 +274,10 @@ def rawInput(message, isPass=False):
 
 
 def printDate(timestamp):
+
+    if len(str(timestamp)) == 13:
+	    timestamp = int(str(timestamp)[0:-3])
+
     return datetime.date.strftime(datetime.date.fromtimestamp(timestamp), "%d.%m.%Y")
 
 def printLine(line, endLine="\n", out=sys.stdout):
